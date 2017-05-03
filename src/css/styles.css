@@ -1,0 +1,24 @@
+    body {
+        padding-top: 50px;
+    }
+
+    .task {
+        height: 20px;
+        width: 300px;
+        border: 1px solid black;
+        background-color: #eee;
+        padding: 5px;
+        margin: 5px;
+    }
+    /* Animate before */
+
+    .task.ng-enter {
+        transition: height 1s;
+        height: 0px;
+        overflow: hidden;
+    }
+    /* Animate after */
+
+    .task.ng-enter-active {
+        height: 20px;
+    }

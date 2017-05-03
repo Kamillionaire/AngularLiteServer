@@ -1,0 +1,13 @@
+{
+  "name": "angularLiteServer",
+  "description": "Lite-Server Json Bootstrap layout",
+  "authors": [
+    "Kamilah Uddin <kamilah.uddin@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  }
+}
