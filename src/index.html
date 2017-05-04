@@ -3,7 +3,7 @@
 
 <head>
     <base href="/">
-    <title>Bootstrap Modal Example</title>
+    <title>Angular LiteServer</title>
     <!-- Third Party Styles -->
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 
@@ -21,7 +21,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-                <a class="navbar-brand" ui-sref="#">My Project</a>
+              <a class="navbar-brand" ui-sref="#">Seahawks Roster by Year</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
 
@@ -29,14 +29,51 @@
             <!--/.nav-collapse -->
         </div>
     </nav>
-    <div>
-      {{vm.players}}
-    </div>
+
+  <center><div class="well">
+            <div class="btn-group" uib-dropdown>
+                <button id="split-button" type="button" class="btn btn-success">Roster</button>
+                <button type="button" class="btn btn-info" uib-dropdown-toggle>
+                    <span class="caret"></span>
+                    <span class="sr-only">Split button!</span>
+                </button>
+                <ul ng-model class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                    <li ng-click="vm.loadRoster(vm.year)" role="menuitem">{{vm.year}}</li>
+                </ul>
+            </div></center>
+
+  <table class="table table-striped">
+    <thread>
+      <tr>
+        <th>Number</th>
+        <th>Player Name</th>
+        <th>Position</th>
+        <th>G</th>
+        <th>GS</th>
+        <th>Birthday</th>
+        <th>College</th>
+      </tr>
+    </thread>
+    <tbody>
+      <tr ng-repeat="p in vm.Players">
+        <td>{{p.number}}</td>
+        <td>{{p.playerName}}</td>
+        <td>{{p.position}}</td>
+        <td>{{p.g}}</td>
+        <td>{{p.gs}}</td>
+        <td>{{p.birthday}}</td>
+        <td>{{p.college}}</td>
+      </tr>
+    </tbody>
+  </table>
     <!-- Third Party Scripts -->
-    <script src="lib/angular/angular.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
     <!-- Application Scripts -->
+    <script src="/models/player.js"></script>
     <script src="controller.js"></script>
     <script src="app.config.js"></script>
     <script src="app.js"></script>
