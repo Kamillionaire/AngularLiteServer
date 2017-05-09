@@ -37,8 +37,9 @@
                     <span class="caret"></span>
                     <span class="sr-only">Split button!</span>
                 </button>
-                <ul ng-model class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
-                    <li ng-click="vm.loadRoster(vm.year)" role="menuitem">{{vm.year}}</li>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                    <li><a ng-click="vm.loadRoster(year)" ng-repeat="year in vm.years" role="menuitem">{{year}}</a></li>
+                  
                 </ul>
             </div></center>
 
